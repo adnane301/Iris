@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ProfitPredictor API (50 Startups)</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Iris Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	Enter Sepal Length (cm): <input type="text" name="sepal_length" placeholder="Enter Sepal Length: " required="required" /><br>
+        Enter Sepal Width (cm): <input type="text" name="sepal_width" placeholder="Enter Sepal Width: " required="required" /><br>
+		Enter Petal length (cm): <input type="text" name="petal_length" placeholder="Enter Petal length: " required="required" /><br>
+        Enter Petal Width (cm): <input type="text" name="petal_width" placeholder="Enter Petal Width: " required="required" /><br>
+        
+        <br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Class</button>
+    </form>
+
+   <br>
+   <br>
+   {{ class_text }}
+
+ </div>
+
+
+</body>
+</html>
